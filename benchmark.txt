@@ -1,0 +1,123 @@
+2x1000 		P0: 63 MB		P1: 37 MB		P2: 36.5 MB
+
+
+
+
+1. Using Topology API:
+
+- topology::DumpLayerConnections
+prints a list of the connections of the nodes in the layer
+- topology::DumpLayerNodes
+write information about layer nodes to file
+
+Questions:
+- What about networks which are not created using Topology API?
+
+2. Using GetStatus() on GetLeaves() and GetConnections() and DataConnect for recreation
+
+
+
+IS IT IMPORTANT TO HAVE:
+	- REPRODUCIBILITY
+	- SNAPSHOT IMPORTANCE, SYNAPSES
+	- FORMAT (DUMPING IN NEST, DICT OVERHEAD)
+	- 
+WHICH EXPERIMENTS TO FOCUS ON?
+
+shelves format
+XDM format
+checkpoint library
+neuron per neuron, get connections of those
+Monday 11:00 PM, Jabber EPFL dial-in, from EPFL website
+labels both in Nest brain and in experiment definition file
+
+===> 300 -> 500 -> 300, pickle protocol 0:
+
+Building brain...
+Loading brain from file: /home/igor/hbp/brains/dummy_brain.py
+Done, it took 0.195947 seconds.
+Streaming input...
+Done, it took 3.5e-05 seconds.
+Saving brain snapshot...
+--- querying nodes...
+--- Done. It took 0.023916 seconds.
+--- querying connections...
+--- Done. It took 3.576645 seconds.
+--- dumping to a file...
+--- Done. It took 6.291551 seconds.
+Done, it took 10.083646 seconds.
+Loading brain snapshot...
+
+Nov 10 16:51:56 Network::clear_models [Info]: 
+    Models will be cleared and parameters reset.
+--- reading file...
+--- Done. It took 4.972834 seconds.
+--- creating nodes...
+--- Done. It took 0.096751 seconds.
+--- creating connections...
+--- Done. It took 4.689567 seconds.
+Done, it took 10.001773 seconds.
++-[0] root dim=[1100]
+   |
+   +-[1]...[1100] iaf_neuron
+
+
+===> 300 -> 500 -> 300, pickle protocol 2:
+
+Building brain...
+Loading brain from file: /home/igor/hbp/brains/dummy_brain.py
+Done, it took 0.206275 seconds.
+Streaming input...
+Done, it took 4.8e-05 seconds.
+Saving brain snapshot...
+--- querying nodes...
+--- Done. It took 0.024202 seconds.
+--- querying connections...
+--- Done. It took 3.695204 seconds.
+--- dumping to a file...
+--- Done. It took 2.46998 seconds.
+Done, it took 6.385265 seconds.
+Loading brain snapshot...
+
+Nov 10 16:54:43 Network::clear_models [Info]: 
+    Models will be cleared and parameters reset.
+--- reading file...
+--- Done. It took 2.241918 seconds.
+--- creating nodes...
+--- Done. It took 0.100324 seconds.
+--- creating connections...
+--- Done. It took 4.844364 seconds.
+Done, it took 7.383962 seconds.
++-[0] root dim=[1100]
+   |
+   +-[1]...[1100] iaf_neuron
+
+===> 500 -> 500 -> 500, pickle protocol 2:
+
+Building brain...
+Loading brain from file: /home/igor/hbp/brains/dummy_brain.py
+Done, it took 0.33229 seconds.
+Streaming input...
+Done, it took 4.4e-05 seconds.
+Saving brain snapshot...
+--- querying nodes...
+--- Done. It took 0.036138 seconds.
+--- querying connections...
+--- Done. It took 6.115261 seconds.
+--- dumping to a file...
+--- Done. It took 4.048889 seconds.
+Done, it took 10.513991 seconds.
+Loading brain snapshot...
+
+Nov 10 17:02:50 Network::clear_models [Info]: 
+    Models will be cleared and parameters reset.
+--- reading file...
+--- Done. It took 3.892265 seconds.
+--- creating nodes...
+--- Done. It took 0.129378 seconds.
+--- creating connections...
+--- Done. It took 7.858606 seconds.
+Done, it took 12.214561 seconds.
++-[0] root dim=[1500]
+
+
